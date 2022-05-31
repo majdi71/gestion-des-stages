@@ -1,0 +1,27 @@
+{% extends 'user.html.twig' %}
+
+{% block title %} Gestion de stage{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+ <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Déposer stage</h1>
+                       
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                       <div class="container-fluid">
+                     <h1>Modifier votre stage</h1>
+
+   {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-success btn-icon-split">{{ button_label|default('Modifier') }}</button>
+{{ form_end(form) }}
+
+                    </div>
+                    
+                   </div>
+ </div>
+{% endblock %}

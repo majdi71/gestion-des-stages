@@ -1,0 +1,64 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %} Gestion de stage{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+ <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Liste des soutenances</h1>
+                       
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                       <div class="container-fluid">
+                    <table class="table">
+ 
+   
+ 
+   
+  
+
+   
+     <thead class="thead-light">
+     
+      <tr>
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+       <th scope="col">Class</th>
+      <th scope="col">Nom </th>
+      <th scope="col">Jury</th>
+      <th scope="col">Date Soutenance</th>
+        <th scope="col">Salle</th>
+           <th scope="col">Note</th>
+        <th scope="col"></th>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+   {% for soutenace in soutenaces %}
+    <tr>
+    <td>{{ soutenace.class }}</td>
+    <td>{{ soutenace.nom }}</td>
+    <td>{{ soutenace.jury }}</td>
+    <td>{{ soutenace.date }}</td>
+    <td>{{ soutenace.salle }}</td>
+    <td>{{ soutenace.note }}</td>
+    <td>
+     <div class="items-link items-link2 f-right">
+    <a class="btn btn-success btn-icon-split" href="{{ path('soutedit', {'id': soutenace.id} ) }}">Edit</a>
+   
+    <a class="btn btn-danger btn-icon-split" href="{{ path('sout', {'id': soutenace.id} ) }}">Delate</a>
+      </div>
+      </td>
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+                    </div>
+                    
+                   </div>
+ </div>
+{% endblock %}

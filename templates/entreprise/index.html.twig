@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des entreprise{% endblock %}
+
+{% block body %}
+ <div class="slider-area ">
+        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Liste des entreprises</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="job-post-company pt-120 pb-120">
+  
+
+           
+<table class="table">
+ 
+   
+ 
+   
+  
+
+   
+     <thead class="thead-light">
+     
+      <tr>
+       
+                             {{ form_start(form) }} 
+                        
+                   {{ form_end(form) }}
+
+      <th scope="col">ID</th>
+      <th scope="col">Nom de l'entreprise</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Email entreprise</th>
+        <th scope="col">Téléphone</th>
+      <th scope="col">Spécialité(s)</th>
+        <th scope="col"></th>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+   {% for entreprise in entreprises %}
+    <tr>
+  
+    <td>{{ entreprise.id }}</td>
+    <td>{{ entreprise.nom }}</td>
+      <td>{{ entreprise.adresse }}</td>
+    <td>{{ entreprise.email }}</td>
+    <td>{{ entreprise.telephone }}</td>
+    <td>{{ entreprise.Specialite }}</td>
+    <td> <div class="items-link items-link2 f-right">
+                                        <a href="{{ path('entreprisedetails',{'id':entreprise.id})}}">Voir plus</a>
+                                      
+                                    </div></td>
+    </tr>
+     {% endfor %}
+  </tbody>
+</table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+    </div>
+{% endblock %}

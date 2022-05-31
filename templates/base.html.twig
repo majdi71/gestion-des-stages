@@ -52,16 +52,16 @@
                                         <ul id="navigation">
                                             <li><a href="{{path('index')}}">Home</a></li>
                                             <li><a href="{{path('stage')}}">liste des stages </a></li>
-                                             <li><a href="{{path('stage')}}">Offres de stage </a></li>
-                                            <li><a href="{{path('about')}}">About</a></li>     
+                                             <li><a href="{{path('entreprise')}}">Liste des entreprises </a></li>
+                                              
                                             <li><a href="{{path('contact')}}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>          
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="#" class="btn head-btn1">Register</a>
-                                    <a href="#" class="btn head-btn2">Login</a>
+                                    <a href="/register" class="btn head-btn1">Register</a>
+                                    <a href="/login" class="btn head-btn2">Login</a>
                                 </div>
                             </div>
                         </div>
@@ -76,6 +76,7 @@
         <!-- Header End -->
 {% endblock %}
 {% block body %}
+
 {% endblock %}
  <!-- Footer Start-->
         <div class="footer-area footer-bg footer-padding">
@@ -192,6 +193,11 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{asset('theme/js/plugins.js')}}"></script>
         <script src="{{asset('theme/js/main.js')}}"></script> 
-		{% endblock %}
+    
+
+
+
+    
+{% endblock %}
 		</html>
 		

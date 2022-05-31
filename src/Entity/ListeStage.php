@@ -40,32 +40,49 @@ class ListeStage
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titre_de_stage;
+    private $titre;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type_de_stage;
+    private $typestage;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom_du_socite;
+    private $nomsocite;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $emailSocite;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adresse_socite;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description_de_stage;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image_socite;
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $classe;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="listeStages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+
 
     public function getId(): ?int
     {
@@ -120,74 +137,110 @@ class ListeStage
         return $this;
     }
 
-    public function getTitre_De_Stage(): ?string
+    public function getTitre(): ?string
     {
-        return $this->titre_de_stage;
+        return $this->titre;
     }
 
-    public function setTitre_De_Stage(string $titre_de_stage): self
+    public function setTitre(string $titre): self
     {
-        $this->titre_de_stage = $titre_de_stage;
+        $this->titre = $titre;
 
         return $this;
     }
 
-    public function getType_De_Stage(): ?string
+    public function getTypeStage(): ?string
     {
-        return $this->type_de_stage;
+        return $this->typestage;
     }
 
-    public function setType_De_Stage(string $type_de_stage): self
+    public function setTypeStage(string $typestage): self
     {
-        $this->type_de_stage = $type_de_stage;
+        $this->typestage = $typestage;
 
         return $this;
     }
 
-    public function getNom_Du_Socite(): ?string
+    public function getNomSocite(): ?string
     {
-        return $this->nom_du_socite;
+        return $this->nomsocite;
     }
 
-    public function setNom_Du_Socite(string $nom_du_socite): self
+    public function setNomSocite(string $nomsocite): self
     {
-        $this->nom_du_socite = $nom_du_socite;
+        $this->nomsocite = $nomsocite;
 
         return $this;
     }
 
-    public function getAdresse_Socite(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->adresse_socite;
+        return $this->adresse;
     }
 
-    public function setAdresse_Socite(string $adresse_socite): self
+    public function setAdresse(string $adresse): self
     {
-        $this->adresse_socite = $adresse_socite;
+        $this->adresse = $adresse;
 
         return $this;
     }
 
-    public function getDescription_De_Stage(): ?string
+    public function getDescription(): ?string
     {
-        return $this->description_de_stage;
+        return $this->description;
     }
 
-    public function setDescription_De_Stage(string $description_de_stage): self
+    public function setDescription(string $description): self
     {
-        $this->description_de_stage = $description_de_stage;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getImage_Socite(): ?string
+    public function getImage(): ?string
     {
-        return $this->image_socite;
+        return $this->image;
     }
 
-    public function setImage_Socite(string $image_socite): self
+    public function setImage(string $image): self
     {
-        $this->image_socite = $image_socite;
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getClasse(): ?string
+    {
+        return $this->classe;
+    }
+
+    public function setClasse(string $classe): self
+    {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    public function getEmailSocite(): ?string
+    {
+        return $this->emailSocite;
+    }
+
+    public function setEmailSocite(string $emailSocite): self
+    {
+        $this->emailSocite = $emailSocite;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
